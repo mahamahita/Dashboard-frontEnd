@@ -1,0 +1,51 @@
+<nb-card>
+
+    <nb-card-header>
+      <div class="row">
+        <div class="col-md-6">
+            <h6>List de consomateur</h6>
+        </div>
+        <div class="col-md-6">
+            <button type="button" class="btn btn-primary btn-sm" (click)="addCustomer()">Ajouter Consomateur</button>
+        </div>
+      </div>
+        
+      </nb-card-header>
+
+    <nb-card-body>
+
+        <form class="form-inline">
+            
+            <label class="label col-sm-1 col-form-label" for="search">Recherche:</label>
+            <input nbInput  id="search" class="form-control" placeholder="Entre prenom de Consomateur" 
+                (keyup)="search($event)">
+        
+        </form><br>
+
+        <table class="table table-hover caption-top">
+            
+            <thead>
+            <tr>
+                <th scope="col">Prenom</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Email</th>
+                <th scope="col">Adress</th>
+                <th scope="col">Ville</th>
+                <th scope="col" colspan="2">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let customer of customers">
+                <td>{{customer.firstName}}</td>
+                <td>{{customer.lastName}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.adress}}</td>
+                <td>{{customer.city}}</td>
+                <td><button type="button" class="btn btn-warning btn-sm" (click)="editCustomer(customer)">Edit</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm" (click)="deleteCustomer(customer.id)">delete</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </nb-card-body> 
+
+</nb-card>  

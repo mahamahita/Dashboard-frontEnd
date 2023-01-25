@@ -1,0 +1,100 @@
+<!--entete facture-->
+<div class="row mb-4 p-2">
+  <div class="col" style="border-left: black double 8px; margin: 20px; float:left;">
+    <img src="/assets/images/logo.png" alt="LOGO" width="80px" height="150px" class="img-thumbnail">
+    <h3>ENSAK COMMERCE</h3>
+    <p>Societé Anonyme d'un capitale de 1500000$</p>
+    <p>enregistrée en 2002</p>
+    <p>Date</p>
+  </div>
+
+
+</div>
+
+<div class="myFact">
+
+
+  <form action="">
+    <!--invoice-->
+    <div class="card m-2 p-4">
+      <div class="card-header">
+        Ajouter une facture
+      </div>
+      <div class="card-body">
+        <div class="row ">
+          <div class="col col-md-5">
+            <p>id: <b></b></p>
+            <p>reference: <b></b></p>
+            <p>date facture: <b></b></p>
+
+          </div>
+          <div class="col col-md-5" style="border-left: solid 1px black">
+            <p>Decompte: <b></b></p>
+            <p>Somme Globale: <b></b></p>
+          </div>
+          <div class="col col-md-2" style="border-left: solid 1px black">
+            <button class="btn btn-outline-success" (click)="addInvoiceToFacture()">add</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!--customer-->
+    <div class="card m-2 p-4">
+      <div class="card-header">
+        Ajouter un client
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col col-md-5" style="border-left: solid 1px black">
+            <p> id : <b></b></p>
+            <p> nom : <b></b></p>
+            <p> prenom : <b></b></p>
+          </div>
+          <div class="col col-md-5" style="border-left: solid 1px black">
+            <p> email : <b></b></p>
+            <p> adresse : <b></b></p>
+            <p> ville : <b></b></p>
+          </div>
+
+          <div class="col col-md-2" style="border-left: solid 1px black">
+            <button class="btn btn-outline-success" (click)="addCustomerToFacture()">add</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!--product-->
+    <div class="card m-2 p-4">
+      <div class="card-header">
+        Ajouter un produit
+      </div>
+      <div class="card-body">
+        <div class="row ">
+          <div class="col col-md-5" style="border-left: solid 1px black">
+            <p> id : <b></b></p>
+            <p> designation : <b></b></p>
+            <p> prix : <b></b></p>
+          </div>
+
+          <div class="col col-md-5" style="border-left: solid 1px black">
+            <p> description : <b></b></p>
+            <p> quantité : <b></b></p>
+          </div>
+
+          <div class="col col-md-2" style="border-left: solid 1px black">
+            <button class="btn btn-outline-success" (click)="addProductToFacture()">add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+</div>

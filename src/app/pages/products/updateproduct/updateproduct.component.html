@@ -1,0 +1,56 @@
+<div class="col-md-6 offset-md-3">
+  <h3>Modifier un Produit</h3>
+  <form (ngSubmit) = "onSubmit()">
+    <div class="form-group">
+      <label>
+        ID
+      </label>
+      <input type="number" class="form-control" id="id" [(ngModel)]="product.id" name="id">
+
+    </div>
+    <div class="form-group">
+      <label>
+        Designation
+      </label>
+      <input type="text" class="form-control" id="designation" [(ngModel)]="product.designation" name="designation">
+
+    </div>
+    <div class="form-group">
+      <label>
+        Prix
+      </label>
+      <input type="number" class="form-control" id="price" [(ngModel)]="product.price" name="price">
+
+    </div>
+    <div class="form-group">
+      <label>
+        Quantité en Depôt
+      </label>
+      <input type="number" class="form-control" id="depositQuantity" [(ngModel)]="product.depositQuantity" name="depositQuantity">
+
+    </div>
+    <div class="form-group">
+      <label>
+        Photo du Produit
+      </label>
+      <input type="text" class="form-control" id="photo" [(ngModel)]="product.photo" name="photo">
+
+    </div>
+    <div class="form-group">
+      <label>
+        Date d'Expiration
+      </label>
+      <input type="text" class="form-control" id="expiryDate" [(ngModel)]="product.expiryDate" name="expiryDate">
+
+    </div>
+    <div class="form-group">
+      <label>
+        Description
+      </label>
+      <input type="text" class="form-control" id="description" [(ngModel)]="product.description" name="description">
+
+    </div>
+    <button class="btn btn-success" type="submit">Enregistrer </button>
+
+  </form>
+</div>

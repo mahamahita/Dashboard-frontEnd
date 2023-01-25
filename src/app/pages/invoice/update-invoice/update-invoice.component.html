@@ -1,0 +1,45 @@
+<!--<p>curent invoice {{currentInvoice}}</p>-->
+<div class="container">
+
+
+<h3>Modifier une facture</h3>
+
+
+<form (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label>Reference</label>
+    <input type="text" class="form-control" id="id"
+           [(ngModel)]="currentInvoice.id" name="id" placeholder="entrer id">
+  </div>
+  <div class="form-group">
+    <label>Reference</label>
+    <input type="text" class="form-control" id="reference"
+           [(ngModel)]="currentInvoice.reference" name="reference" placeholder="entrer reference Invoice">
+  </div>
+
+  <div class="form-group">
+    <label for="">Date Facture:</label>
+    <input type="text" class="form-control" id="content"
+           [(ngModel)]="currentInvoice.dateFacture" name="datFacture" placeholder="saisir date">
+  </div>
+  <div class="form-group">
+    <label for="">Decompte:</label>
+    <input type="text" class="form-control" id="decompte"
+           [(ngModel)]="currentInvoice.decompte" name="decompte" placeholder="décompte">
+  </div>
+  <div class="form-group">
+    <label for="">Cout Globale:</label>
+    <input type="text" class="form-control" id="sommeGlobale"
+           [(ngModel)]="currentInvoice.sommeGlobale" name="sommeGlobale" placeholder="cout Global">
+  </div>
+
+
+  <div class="d-flex justify-content-end">
+    <button class="btn btn-success mt-2 " type="submit">Enregistrer</button>
+
+  </div>
+
+
+</form>
+</div>

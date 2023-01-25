@@ -1,0 +1,118 @@
+
+<div class="container">
+
+<!--  head-->
+  <div class="my-4 d-flex justify-content-end">
+    <button class="btn btn-success align-middle" (click)="addInvoice()" >
+      <i class="fa-solid fa-file-circle-plus me-2"></i>
+      <b>Add Invoice</b>
+    </button>
+  </div>
+  <div class="my-4">
+    <label for="search">Search:</label>
+    <input
+      type="search"
+      id="search"
+      (keyup)="searchInvoice()"
+      [(ngModel)]="searchedText"
+      [disabled] ="responseCode === 404 || responseCode ===500 || isLoading"
+      class="form-control"
+      placeholder="cherchez un Invoice"
+      aria-label="Search"
+      class="form-control mb-2"
+    />
+    <p>La facture recherchée est :  <b style="color: blue">{{searchedText}} </b></p>
+  </div>
+
+
+  <!-- Not Found -->
+  <div *ngIf="responseCode === 404" class="d-flex justify-content-center align-items-center">
+    <img class="mt-4" style="height:400px;width:400px" src="/assets/errors/error-404.webp" alt="not found illustration">
+  </div>
+
+  <!-- SInternal Server Error -->
+  <div *ngIf="responseCode === 500" class="d-flex">
+    <img class="mt-4" style="height:400px;width:400px" src="/assets/errors/server-error.webp" alt="internal server illustration">
+  </div>
+
+
+  <!-- Data is Loading -->
+  <div *ngIf="isLoading" class="mt-5 w-full d-flex justify-content-center align-items-center">
+    <div class="mt-3 spinner-border text-primary mt-1" role="status"></div>
+  </div>
+
+
+
+
+<!--  body-->
+
+  <div class="card">
+    <div class="card-header">
+      <h4 class="text-center">Liste des Facture</h4>
+    </div>
+
+    <div class="card-body">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>ID</th><th>REFERENCE</th><th>DATE EDITION</th> <th>DECOMPTE</th><th>SOMME</th><th>CLIENT</th><th>PRODUCT</th><th>OPEARATIONS</th>
+        </tr>
+        </thead>
+        <tbody>
+
+<!--        <tr *ngFor="let i in resultsSearch">-->
+<! --npm install ngx-pagination --save : to install pagination -->
+        <tr *ngFor= "let i of resultInvoices | paginate: { itemsPerPage: 6 , currentPage : page }">
+
+          <td>{{i.id}}</td>
+          <td>{{i.reference}}</td>
+          <td>{{i.dateFacture}}</td>
+          <td>{{i.decompte}}</td>
+          <td>{{i.sommeGlobale}}</td>
+          <td>{{i.client.firstName}}</td>
+          <td><span *ngFor="let p of i.products">{{p.designation +" , "}}</span></td>
+
+          <td>
+            <!--update-->
+            <button class="btn btn-warning" (click)="updateCours(i.id)" >
+              <i class="fas fa-edit"  ></i>
+            </button>
+
+            <!--delete-->
+            <button class="btn btn-danger ml-4" (click)="deleteInvoice(i.id)" >
+              <i class="fas fa-trash-alt"></i>
+            </button>
+
+
+
+            <!--detail-->
+            <button class="btn btn-outline-success ml-4" (click)="goToDetailInvoice(i.id)">
+              <i class="fas fa-search" ></i></button>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+
+<!--      PAGINATION-->
+      <div class="d-flex mt-4 justify-content-center align-items-center">
+        <pagination-controls
+          previousLabel="Prev"
+          nextLabel="Next"
+          responsive="true"
+          (pageChange)="page= $event"
+        ></pagination-controls>
+      </div>
+    </div>
+
+  </div>
+
+
+<!--footer-->
+<div class="row">
+  <br><br><br><br><br><br><br><br>
+</div>
+</div>
+
+
+

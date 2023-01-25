@@ -1,0 +1,95 @@
+
+<div class="d-flex justify-content-center align-items-center ">
+<h1 >Liste Des Produits</h1>
+</div>
+
+
+<div class="container">
+  <div class="my-4">
+
+
+  <div class="card">
+
+    <div class="card-header " id="HASH">
+
+       <div >
+
+          <button [routerLink]="['/pages/products/create']" class="btn btn-primary">
+             <i class="bi bi-plus"> Ajouter produit</i></button>
+       </div>
+
+       <form class="col-md-7" >
+
+         <div class="input-group col-md-7 float-right">
+
+             <input class="  border-right-0 border form-control  " [(ngModel)]="searchByDesignation"
+             (ngModelChange)="getByDesignation()"
+
+              type="text" id="form1"  placeholder="Chercher un produit par designation" name="designation"/>
+             <span class="input-group-append">
+                <div class="input-group-text bg-transparent">
+                  <i class="bi bi-search"></i>
+                </div>
+             </span>
+
+    </div>
+       </form>
+    </div>
+
+
+
+
+
+
+
+      <table class="table  table-hover caption-top   bg-white">
+
+
+
+        <thead class="bg-light">
+
+        <tr >
+        <th class="text-center">Photo</th>
+        <th (click)="sort('id')" class="text-center">Id&nbsp; <i class="fa fa-sort"></i></th>
+        <th (click)="sort('designation')"class="text-center">Designation&nbsp;<i class="fa fa-sort"></i></th>
+        <th (click)="sort('price')" class="text-center">Prix&nbsp;<i class="fa fa-sort"></i></th>
+
+        <th class="text-center">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let p of products |orderBy: key:reverse |paginate: { itemsPerPage: 5, currentPage: page } ">
+         <td class="text-center"> <img src="{{ p.photo }}"
+                  style="width: 100px; height: 55px;"
+                  class="product-img"
+                  alt=""
+         ></td>
+         <td class="text-center">{{p.id}}</td>
+         <td class="text-center">{{p.designation}}</td>
+         <td class="text-center">{{p.price}}</td>
+
+         <td class="text-center">
+
+           <button  (click)="updateProduct(p.id)" class = "mr-1 btn btn-info btn-sm"> <i class="bi bi-pencil-fill"></i></button>
+
+           <button  class="btn btn-danger btn-sm mr-1" (click)="deleteProduct(p.id)">
+             <i class="bi bi-trash3-fill"></i>
+
+           </button>
+           <button  (click)="productDetails(p.id)" class = "mr-1 btn btn-primary btn-sm"> <i class="bi bi-eye"></i></button>
+
+         </td>
+
+       </tr>
+
+      </tbody>
+
+    </table>
+
+    </div>
+  </div>
+  <div class="d-flex mt-4 justify-content-center align-items-center">
+    <pagination-controls responsive="true" (pageChange)="page = $event"></pagination-controls>
+  </div>
+  </div>
+
