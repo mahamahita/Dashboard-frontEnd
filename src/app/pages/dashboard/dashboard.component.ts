@@ -79,7 +79,7 @@ this.service.Getinvoiceinfo().subscribe(result => {
          this.realdata4.push(this.invoicedata[i].id );
         }
 
-        this.RenderChart2(this.labeldata3,this.realdata4,this.colordata,'scatter','linechart','Commandes');
+        this.RenderChart2(this.labeldata3,this.realdata4,this.colordata,'line','linechart','Commandes');
 
 
       }
