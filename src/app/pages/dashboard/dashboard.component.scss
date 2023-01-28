@@ -14,3 +14,77 @@
     }
   }
 }
+.cardBox{
+position:relative;
+width: 100%;
+padding:20px;
+display:grid;
+grid-template-columns: repeat(4,1fr);
+grid-gap: 30px;
+}
+
+.card{
+position:relative;
+padding:30px;
+border-radius: 20px;
+display:flex;
+justify-content: space-between;
+cursor: pointer;
+box-shadow:0 7 px 25px rgba(0,0,0,0.08);
+
+}
+
+.numbers{
+position: relative;
+font-weight:500;
+font-size: 2.5em;
+color: var(--blue);
+
+}
+
+.cardName{
+color: var(--black2);
+font-size:1.1em;
+margin-top:5px
+}
+
+.iconBx{
+font-size: 3.5em;
+color: var(--black2);
+
+}
+
+.card:hover{
+background-color :#6b9bd1;
+
+}
+
+.color1{
+background-color:#cedef0;
+}
+.color2{
+background-color:#e9bbba;
+}
+.color3{
+background-color:#a0b6f7;
+}
+.color4{
+background-color:#bdfff6;
+}
+
+.card:hover .numbers,
+.card:hover .cardName,
+.card:hover .iconBx
+{
+color: var(--white);
+
+}
+
+.box{
+position:relative;
+
+padding:20px;
+
+box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+border-radius: 20px;
+}

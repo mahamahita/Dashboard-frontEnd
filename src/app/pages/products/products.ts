@@ -6,7 +6,7 @@ export class Products {
     photo: string;
     expiryDate: string;
     description: string;
-
+sales:number;
 }
 
 

@@ -5,5 +5,14 @@
 @include nb-install-component() {
   .menu-sidebar ::ng-deep .scrollable {
     padding-top: nb-theme(layout-padding-top);
+    background-color:#CCD4DF;
+
+    opacity: 0.8;
+    text-color: white;
+
+  }
+
+  .menu{
+ filter: blur(10px);
   }
 }

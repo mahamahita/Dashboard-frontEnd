@@ -11,82 +11,70 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
-    title: 'Consommateurs',
+    title: 'Clients',
     icon: 'person-outline',
     children: [
       {
-        title: 'principale',
+        title: 'Liste des Clients',
+         icon: 'list-outline',
         link: '/pages/customers/principale',
-      }],
+      }, {
+                title: 'Ajout Client',
+                icon: 'plus-outline',
+                link: '/pages/customers/save',
+              },
+              {
+                title: 'Modification Client',
+                icon: 'edit-outline',
+                link: '/pages/customers/update/:id',
+              },
+             ],
   },
   {
     title: 'Produits',
     icon: 'shopping-bag-outline',
     children: [
       {
-        title: 'principale',
-        link: '/pages/products/principale',
-      }],
+        title: 'Liste des produits',
+        icon: 'list-outline',
+        link: '/pages/products/list',
+      }, {
+                title: 'Ajout Produit',
+                icon: 'plus-outline',
+                link: '/pages/products/create',
+              },
+              {
+                title: 'Modification Produit',
+                icon: 'edit-outline',
+                link: '/pages/products/update/:id',
+              },
+              ],
   },
   {
     title: 'Factures',
     icon: 'layout-outline',
     children: [
       {
-        title: 'Principale',
+        title: 'Liste des Factures',
+        icon: 'list-outline',
         link: '/pages/invoice/principale',
       },
       {
-        title: 'create-invoice',
+        title: 'Ajout Facture',
+        icon: 'plus-outline',
         link: '/pages/invoice/create-invoice',
       },
       {
-        title: 'update-invoice',
+        title: 'Modification Facture',
+        icon: 'edit-outline',
         link: '/pages/invoice/update-invoice/:id',
       },
       {
-        title: 'detail-invoice',
+        title: 'Details Facture',
+        icon: 'eye-outline',
         link: '/pages/invoice/detail-invoice/:id',
       },
     ],
   },
-  {
-    title: 'Outils',
-    icon: 'settings',
-    children: [
-      {
-        title: 'reglage',
-        link: '/pages/tools/principale',
-      }],
-  },
 
-
-
-
-
-
-
-
-  {
-    title: 'Auth',
-    icon: 'lock-outline',
-    children: [
-      {
-        title: 'Login',
-        link: '/auth/login',
-      },
-      {
-        title: 'Register',
-        link: '/auth/register',
-      },
-      {
-        title: 'Request Password',
-        link: '/auth/request-password',
-      },
-      {
-        title: 'Reset Password',
-        link: '/auth/reset-password',
-      },
-    ],
-  },
 ];

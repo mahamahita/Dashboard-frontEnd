@@ -1,1 +1,73 @@
-<h1>Dashboard</h1>
+<div class="cardBox">
+
+  <div class="card color1" >
+  <div>
+  <div class="numbers"> {{customerTable.length}}</div>
+    <div class="cardName" >Clients</div>
+  </div>
+<div class="iconBx">
+<i class="bi bi-people-fill"></i>
+  </div>
+</div>
+  <div class="card color2">
+    <div>
+      <div class="numbers">
+        {{salesnumber}}
+      </div>
+      <div class="cardName">Ventes</div>
+    </div>
+    <div class="iconBx">
+    <i class="bi bi-cash-coin"></i>
+  </div>
+  </div>
+  <div class="card color3">
+    <div>
+      <div class="numbers">
+        {{invoiceTable.length}}
+      </div>
+      <div class="cardName">Commandes</div>
+    </div>
+    <div class="iconBx">
+    <i class="bi bi-bag-heart"></i>
+  </div>
+  </div>
+  <div class="card color4">
+    <div>
+      <div class="numbers">
+        {{invoiceTable.length}}
+      </div>
+      <div class="cardName">Produits</div>
+    </div>
+    <div class="iconBx">
+    <i class="bi bi-phone"></i>
+  </div>
+</div>
+</div>
+
+<!-- chart-->
+<div class="row ">
+  <div class="col-lg-8 ">
+    <br><br><br><br>
+    <h2>Ventes</h2>
+    <canvas id="barchart" ></canvas>
+  </div>
+
+  <div class="col-lg-4 ">
+    <br><br><br><br>
+    <h2>Quantité en depôt</h2>
+    <canvas id="piechart" width="200px" height="200px"></canvas>
+  </div>
+
+  <div class="col-lg-4 ">
+    <br><br><br><br>
+    <h2>Clients par ville</h2>
+    <canvas id="doghnut" ></canvas>
+  </div>
+
+  <div class="col-lg-8 ">
+    <br><br><br><br>
+    <h2>Commandes par date</h2>
+    <canvas id="linechart"></canvas>
+  </div>
+
+</div>
